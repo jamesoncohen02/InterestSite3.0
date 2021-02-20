@@ -1,0 +1,27 @@
+{
+  "name": "jamesoncohen02.github.io",
+  "version": "1.0.0",
+  "description": "Interest Site Automation",
+  "engines": {
+    "node": "14.x"
+  },
+  "dependencies": {
+    "ejs": "^3.1.5",
+    "express": "^4.17.1",
+    "fs": "^0.0.1-security"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jamesoncohen02/InterestSite3.0.git"
+  },
+  "author": "Jameson Cohen",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jamesoncohen02/InterestSite3.0/issues"
+  },
+  "homepage": "https://github.com/jamesoncohen02/InterestSite3.0#readme"
+}

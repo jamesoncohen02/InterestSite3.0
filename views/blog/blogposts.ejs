@@ -1,0 +1,117 @@
+<%- include('../global/header.ejs'); %>
+<%- include('../global/navbar.ejs'); %>
+  <section id="blog-posts">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-12">
+          <h2><%= post.Title %></h2>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-12">
+          <h5><%= post.Author %></h5>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-12">
+          <p class="small"><%= post.Date %></p>
+        </div>
+      </div>
+      <% post.Content.forEach(function(val){%>
+        <div class="row">
+          <div class="col-12">
+            <p><%=val%></p>
+          </div>
+        </div>
+      <%}) %>
+      <div class="row">
+        <div class="col-12">
+          <p><span class="font-italic">Tags:</span>
+            <% for (let i = 0; i<post.Hashtags.length; i++){%>
+              <span class="badge badge-pill badge-light"><%= "#" + post.Hashtags[i]; %></span>
+            <%} %>
+          </p>
+        </div>
+      </div>
+        <span>
+        <div class="row">
+          <div class="col-6">
+          <button type="button" class="btn btn-outline-primary btn-sm" id="like_button">Like</button>
+          <img src="/images/like.png" height="30px" width="30px">
+          <h7 id="like_count"><%=post.likes%></h7>
+        </div>
+        </div>
+      </span><br>
+      <span>
+        <div class="row">
+          <div class="col-9">
+            <textarea id="CommentContent_textarea" name="CommentContent" placeholder="Write your comment..." rows="3" cols="150" style="resize: none;" required></textarea>
+          </div>
+          <div class="col-3">
+            <select name="Author" id="author_dropdown" required>
+                <option disabled selected value> -- Select an Author -- </option>
+              <%for (author of Object.values(authors)){%>
+                <option value="<%=author.Name%>"><%=author.Name%></option>
+              <%}%>
+            </select>
+            <button id="comment_submit">Comment</button>
+          </div>
+        </div>
+      </span>
+      <br>
+      <div class="row">
+        <div class="col-12">
+        <h5>Comments</h5>
+        <%if(!post.comments){%>
+          <p id="no_comments_yet">There are no comments yet on this post.</p>
+        <%} else {%>
+          <span id="no_comments_yet"></span>
+        <%}%>
+      </div>
+      </div>
+      <div class="row">
+      <div class="col-12">
+      <section id="all_comments">
+      <%if(post.comments){%>
+        <%for (let i = 0; i<post.comments.length; i++){ %>
+            <div class="comment_official">
+              <%if(i!==0){%>
+              <hr>
+              <%}%>
+              <h7><i><%=post.comments[i].Author%>, <%=post.comments[i].Date%>, <%=post.comments[i].Time%></i></h7>
+              <br><p style="margin-left:10px; margin-top:10px;"><%=post.comments[i].Content%></p>
+              <span>
+              <button type="button" class="btn btn-outline-primary btn-sm like_comment_button">Like</button>
+              <img src="/images/like.png" height="30px" width="30px">
+              <h7 id="like_count_<%=i%>"><%=post.comments[i].likes%></h7>
+            </span>
+            </div>
+        <%}%>
+      <%}%>
+    </section>
+  </div>
+  </div>
+  </section>
+
+  <footer style="margin-top:10px;">
+    <div class="container-fluid footer" style="position: relative; bottom:0; margin-top: 4px;">
+      <div class="row">
+        <div class="col-12">
+          <p class="text-center small">Author: Jameson Cohen, Completed in 2020</p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-12">
+          <p class="text-center small">This content is not to be redistributed without the direct consent of the website author.</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/postdetails_scripts.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  </body>
+
+  </html>

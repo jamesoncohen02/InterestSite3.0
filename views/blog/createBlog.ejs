@@ -1,0 +1,25 @@
+<%- include('../global/header.ejs'); %>
+<%- include('../global/navbar.ejs'); %>
+
+<div class="container-fluid">
+  <h3>Create a Blogpost</h3>
+  <p>Please fill out the form below if you would like to add a blogpost to the Hershey Blog. You will need to select your pre-registered author name and indicate the title of the post, any hashtags, and the content you would like to include in your post. Thank you!</p>
+<form action="/blog" method="post">
+  <label for="Author">Author:</label><br>
+  <select name="Author" id="Author" required>
+      <option disabled selected value> -- Select an Author -- </option>
+    <%for (author of Object.values(authors)){%>
+      <option value="<%=author.Name%>"><%=author.Name%></option>
+    <%}%>
+  </select><br><br>
+  <label for="Title">Title:</label><br>
+   <input type="text" id="Title" name="Title" size="50" required><br><br>
+   <label for="Hashtags">Hashtags (separated by a comma, do not include the hashtag symbol):</label><br>
+   <input type="text" id="Hashtags" name="Hashtags" size="50"><br><br>
+   <label for="Content">Blog Content:</label><br>
+   <textarea id="Content" name="Content" rows="4" cols="100" style="resize: none;" required></textarea><br><br>
+   <input type="submit" value="Submit">
+</form>
+</div>
+
+<%- include('../global/footer.ejs'); %>

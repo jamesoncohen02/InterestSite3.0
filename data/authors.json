@@ -1,0 +1,34 @@
+{
+  "jameson.cohen21@trinityschoolnyc.org": {
+    "Name": "Jameson Cohen",
+    "Organization": "Trinity School"
+  },
+  "milton.hershey@hershey.com": {
+    "Name": "Milton Hershey",
+    "Organization": "The Hershey Company"
+  },
+  "franklin.mars@marscompany.com": {
+    "Name": "Franklin Mars",
+    "Organization": "Mars Candy Company"
+  },
+  "h.b.reese@hershey.com": {
+    "Name": "H.B. Reese",
+    "Organization": "The Hershey Company"
+  },
+  "henri.nestle@nestle.com": {
+    "Name": "Henri Nestlé",
+    "Organization": "Nestlé Tollhouse"
+  },
+  "hans.riegel@haribo.com": {
+    "Name": "Hans Riegel",
+    "Organization": "Haribo Gummy Bears"
+  },
+  "rodolphe.lindt@lindt.com": {
+    "Name": "Rodolphe Lindt",
+    "Organization": "Lindt Chocolatiers"
+  },
+  "domingo.ghirardelli@ghirardelli.org": {
+    "Name": "Domingo Ghirardelli",
+    "Organization": "Ghirardelli Chocolate Company"
+  }
+}
